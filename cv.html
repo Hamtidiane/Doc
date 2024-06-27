@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modèle de CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .cv-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 1fr 3fr; /* Colonnes pour aside et main */
+            gap: 20px; /* Espacement entre les colonnes */
+        }
+        aside {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            width: 292px;
+        }
+        main {
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin: 10px 0;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #461616;;
+            margin: 5px 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .section p {
+            margin-bottom: 10px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .section ul li {
+            margin-bottom: 5px;
+        }
+        .skills, .skills2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skills div {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 8px 12px;
+            margin: 4px;
+            border-radius: 4px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <aside>
+            <div class="header">
+                <h1>Diabaté Cheick</h1>
+                <p>Alternant Développeur d'Applications</p>
+            </div>
+            <div class="contact-info">
+                <p>8 Allée Auguste Rodin | Seynod, 74600</p>
+                <p>Email : hamtidiane@gmail.com</p>
+                <p>Téléphone : +33 6 14 80 72 90</p>
+            </div>
+            <div class="section">
+                <h2>Hobbie</h2>
+                    <ul>
+                       <li>Randonnée</li>
+                       <li>Football</li>
+                       <li>Cuisine</li>
+                       <li>Jardinnage</li>
+                       <li>Musique</li>
+                    </ul>
+            </div>
+            <div class="section">
+                <h2>Langages</h2>
+                <h4>En cours d'acquisition</h4>
+                <div class="skills2">
+                    <div>
+                        <figure>
+                            <img src="assets/logos/html5.png" alt="html">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="assets/logos/css.png" alt="css">
+                     </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="assets/logos/javascript.png" alt="css">
+                     </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="assets/logos/php.png" alt="css">
+                     </figure>
+                    </div>
+                </div>    
+                    <div class="section">
+
+                        <h2>Framework</h2>
+                        <h4>En cours d'acquisition</h4>
+                        <div class="skills2">
+                    <div>
+                        <figure>
+                            <img src="assets/logos/vuejs.png" alt="css">
+                     </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="assets/logos/laravel.png" alt="css">
+                     </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="assets/logos/symfony.png" alt="css">
+                     </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="assets/logos/springboot.png" alt="css">
+
+                     </figure>
+                    </div>
+                
+            </div>
+        </aside>
+        <main>
+            <div class="section">
+                <h2>À propos de moi</h2>
+                <p>Je suis Cheick Diabaté, concepteur développeur d’applications en alternance avec une passion pour la technologie. J'ai un BTS IDA et un DUT Informatique, renforçant mes compétences en développement. J’ai travaillé 5 ans comme facteur à La Poste, acquérant rigueur, gestion du temps et sens des responsabilités, tout en étant agent d’entretien durant un an.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Expérience professionnelle</h2>
+                <ul>
+                    <li>
+                        <em>2018 - 2023</em><br>
+                        <strong>FACTEUR</strong><br>
+                        <em>LA POSTE</em> - ANNECY<br>
+                        Tri et distribution de courriers et colis
+                    </li>
+
+                    <li>
+                        <em>2022 - 2023</em><br>
+                        <strong>Agent de service ASP</strong><br>
+                        <em>LCM-ANNECY</em> - ANNECY<br>
+                        Entretien de locaux techniques
+                    </li>
+                    <li>
+                        <em>2017 - 2018</em><br>
+                        <strong>Assistant responsable technique service après vente</strong><br>
+                        <em>Intel Afrique</em> - ABIDJAN<br>
+                        Assistant du responsable SAV
+                    </li>
+
+                    <li>
+                        <em>2014- 2017</em><br>
+                        <strong>Maintenance informatique et réparation de smartphones</strong><br>
+                        <em>Auto-Entrepreneur</em> - ABIDJAN<br>
+                    </li>
+                    <li>
+                        <em>2013 - 2014</em><br>
+                        <strong>Agent au service informatique</strong><br>
+                        <em> Agence Comptable des Créances Contentieuses</em> - ABIDJAN<br>
+                        Agent Service Informatique
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Formation</h2>
+                <ul>
+                    <li><strong>BTS - Informatique Développeur d'Applications</strong> </li>
+                    <li>- Institut Professionnel BOOTH, 2012</li>
+                </ul>
+                <ul>
+                    <li><strong>DUT - Informatique Développeur d'Applications</strong></li>
+                    <li>- Institut supérieur des carrières commerciale, 2012</li>
+                </ul>
+                <ul>
+                    <li><strong>Baccalauréat Serie D</strong> 
+                    <li>-Baccalauréat - Candidat Libre</li>
+                </ul>
+            </div>
+            
+        </main>
+    </div>
+</body>
+</html>
