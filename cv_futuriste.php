@@ -24,8 +24,14 @@
             background: #333;
             color: #fff;
             padding-top: 30px;
-            min-height: 70px;
+            min-height: 511px;
             border-bottom: #77aaff 3px solid;
+            background-image: url(assets/image/1000_F_764232615_GBOmFJQIGoWOTBRoiG6oJJX8MQjss9AV.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+
         }
         header h1 {
             text-align: center;
@@ -34,18 +40,18 @@
         }
         nav {
             display: flex;
-            justify-content: center;
-            padding: 5px;
+            justify-content: space-around;
+            padding: 46px;
             background: #555;
         }
-        nav a {
+        nav button {
             color: #fff;
             text-decoration: none;
             padding: 15px;
             margin: 5px;
-            border-radius: 5px;
+            border-radius: 100%;
         }
-        nav a:hover {
+        nav button:hover {
             background: #77aaff;
         }
         .section-title {
@@ -68,7 +74,7 @@
             border-radius: 10px;
         }
         .content div img {
-            width: 50px;
+            width: 201px;
             vertical-align: middle;
         }
         .content div h2 {
@@ -80,6 +86,12 @@
             margin-top: 10px;
             font-size: 16px;
         }
+
+        i{
+            padding-right: 10px;
+        }
+
+
         .skills, .projects {
             display: flex;
             flex-wrap: wrap;
@@ -110,7 +122,7 @@
             position: fixed;
             z-index: 1;
             left: 0;
-            top: 0;
+            top: 200px;
             width: 100%;
             height: 100%;
             overflow: auto;
@@ -121,8 +133,9 @@
             margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
+            width: 25%;
+            height : 5%;
+            max-width: 397px;
             border-radius: 10px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
             position: relative;
@@ -139,6 +152,10 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        #openModalBtn1, #openModalBtn2, #openModalBtn3, #openModalBtn4{
+
+        }
     </style>
 </head>
 <body>
@@ -152,8 +169,6 @@
 
 <nav>
 <button id="openModalBtn1">Informations</button>
-<button id="openModalBtn2">Expériences</button>
-
 <!-- Modale 1 -->
 <div id="myModal1" class="modal">
     <div class="modal-content">
@@ -162,7 +177,7 @@
         <p>Contenu de la modale sur les informations personnelles.</p>
     </div>
 </div>
-
+<button id="openModalBtn2">Expériences</button>
 <!-- Modale 2 -->
 <div id="myModal2" class="modal">
     <div class="modal-content">
@@ -171,12 +186,27 @@
         <p>Contenu de la modale sur les expériences.</p>
     </div>
 </div>
-   
+<button id="openModalBtn3">Éducation</button>
+<!-- Modale 3  -->
+<div id="myModal3" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Éducation</h2>
+        <p>Contenu de la modale sur l'education'.</p>
+    </div>
+</div>
+<button id="openModalBtn4">Compétences</button>
+<!-- Modale 4 -->
+<div id="myModal4" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Compétences</h2>
+        <p>Contenu de la modale sur les Compétences.</p>
+    </div>
+</div>
 
 
-    <a href="#education">Éducation</a>
-    <a href="#skills">Compétences</a>
-    <a href="#projects">Projets</a>
+
 </nav>
 
 <div class="container">
@@ -185,11 +215,11 @@
         <h2 class="section-title">Informations personnelles</h2>
         <div class="content">
             <div>
-                <img src="https://via.placeholder.com/50" alt="Photo de profil">
+                <img src="assets/image/Cheick-Hamadou-DIABATE.jpg" alt="Photo de profil">
                 <h2><?php echo $personalInfo['name']; ?></h2>
-                <p><i class="fas fa-envelope"></i> <?php echo $personalInfo['email']; ?></p>
-                <p><i class="fas fa-phone"></i> <?php echo $personalInfo['phone']; ?></p>
-                <p><i class="fas fa-map-marker-alt"></i> <?php echo $personalInfo['address']; ?></p>
+                <p><i class="fas fa-envelope"></i> <?php echo $personalInfo['email']; ?>hamtidiane@gmail.com</p>
+                <p><i class="fas fa-phone"></i> <?php echo $personalInfo['phone']; ?>06 14 80 72 90</p>
+                <p><i class="fas fa-map-marker-alt"></i> <?php echo $personalInfo['address']; ?>08 Allée Auguste Rodin    74600-ANNECY</p>
             </div>
         </div>
     </section>
@@ -259,6 +289,7 @@
     <p>&copy; 2024 <?php echo $personalInfo['name']; ?>. Tous droits réservés.</p>
 </footer>
 <script>
+    
     // Fonction pour ouvrir une modale
     function openModal(modalId) {
         document.getElementById(modalId).style.display = "flex";
@@ -273,11 +304,45 @@
     document.getElementById("openModalBtn1").onclick = function() {
         openModal("myModal1");
     }
+        // Fonction pour fermer une modale
+        function closeModal(modal) {
+        modal.style.display = "none";
+    }
+
+
+
+    
 
     // Bouton pour ouvrir la modale 2
     document.getElementById("openModalBtn2").onclick = function() {
         openModal("myModal2");
     }
+        // Fonction pour fermer une modale
+    function closeModal(modal) {
+    modal.style.display = "none";
+    }
+
+        // Bouton pour ouvrir la modale 3
+        document.getElementById("openModalBtn3").onclick = function() {
+        openModal("myModal3");
+    }
+
+        // Fonction pour fermer une modale
+        function closeModal(modal) {
+        modal.style.display = "none";
+    }
+
+        // Bouton pour ouvrir la modale 4
+        document.getElementById("openModalBtn4").onclick = function() {
+        openModal("myModal4");
+    }
+        // Fonction pour fermer une modale
+        function closeModal(modal) {
+        modal.style.display = "none";
+    }    
+
+
+
 
     // Obtenir tous les boutons de fermeture
     var closeButtons = document.getElementsByClassName("close");
