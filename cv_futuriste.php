@@ -30,8 +30,6 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-
-
         }
         header h1 {
             text-align: center;
@@ -46,10 +44,13 @@
         }
         nav button {
             color: #fff;
+            background: #333;
             text-decoration: none;
             padding: 15px;
             margin: 5px;
             border-radius: 100%;
+            border: none;
+            cursor: pointer;
         }
         nav button:hover {
             background: #77aaff;
@@ -86,12 +87,9 @@
             margin-top: 10px;
             font-size: 16px;
         }
-
-        i{
+        i {
             padding-right: 10px;
         }
-
-
         .skills, .projects {
             display: flex;
             flex-wrap: wrap;
@@ -122,44 +120,39 @@
             position: fixed;
             z-index: 1;
             left: 0;
-            top: 200px;
+            top: 0;
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
         }
         .modal-content {
             background-color: #fff;
-            margin: 15% auto;
+            margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 25%;
-            height : 5%;
-            max-width: 397px;
+            width: 80%;
+            max-width: 500px;
             border-radius: 10px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
             position: relative;
+            text-align: center;
         }
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
+            cursor: pointer;
         }
         .close:hover,
         .close:focus {
             color: black;
             text-decoration: none;
-            cursor: pointer;
-        }
-
-        #openModalBtn1, #openModalBtn2, #openModalBtn3, #openModalBtn4{
-
         }
     </style>
-</head>
-<body>
-
 </head>
 <body>
 
@@ -168,46 +161,47 @@
 </header>
 
 <nav>
-<button id="openModalBtn1">Informations</button>
+    <button id="openModalBtn1">Informations</button>
+    <button id="openModalBtn2">Expériences</button>
+    <button id="openModalBtn3">Éducation</button>
+    <button id="openModalBtn4">Compétences</button>
+</nav>
+
 <!-- Modale 1 -->
 <div id="myModal1" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" data-modal="myModal1">&times;</span>
         <h2>Informations Personnelles</h2>
         <p>Contenu de la modale sur les informations personnelles.</p>
     </div>
 </div>
-<button id="openModalBtn2">Expériences</button>
+
 <!-- Modale 2 -->
 <div id="myModal2" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" data-modal="myModal2">&times;</span>
         <h2>Expériences</h2>
         <p>Contenu de la modale sur les expériences.</p>
     </div>
 </div>
-<button id="openModalBtn3">Éducation</button>
-<!-- Modale 3  -->
+
+<!-- Modale 3 -->
 <div id="myModal3" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" data-modal="myModal3">&times;</span>
         <h2>Éducation</h2>
-        <p>Contenu de la modale sur l'education'.</p>
+        <p>Contenu de la modale sur l'éducation.</p>
     </div>
 </div>
-<button id="openModalBtn4">Compétences</button>
+
 <!-- Modale 4 -->
 <div id="myModal4" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" data-modal="myModal4">&times;</span>
         <h2>Compétences</h2>
-        <p>Contenu de la modale sur les Compétences.</p>
+        <p>Contenu de la modale sur les compétences.</p>
     </div>
 </div>
-
-
-
-</nav>
 
 <div class="container">
     <!-- Informations personnelles -->
@@ -219,7 +213,7 @@
                 <h2><?php echo $personalInfo['name']; ?></h2>
                 <p><i class="fas fa-envelope"></i> <?php echo $personalInfo['email']; ?>hamtidiane@gmail.com</p>
                 <p><i class="fas fa-phone"></i> <?php echo $personalInfo['phone']; ?>06 14 80 72 90</p>
-                <p><i class="fas fa-map-marker-alt"></i> <?php echo $personalInfo['address']; ?>08 Allée Auguste Rodin    74600-ANNECY</p>
+                <p><i class="fas fa-map-marker-alt"></i> <?php echo $personalInfo['address']; ?>08 Allée Auguste Rodin 74600-ANNECY</p>
             </div>
         </div>
     </section>
@@ -254,116 +248,4 @@
             </div>
             <?php endforeach; ?>
         </div>
-    </section>
-
-    <!-- Compétences -->
-    <section id="skills">
-        <h2 class="section-title">Compétences</h2>
-        <div class="skills">
-            <?php foreach ($skills as $skill) : ?>
-            <div>
-                <i class="<?php echo $skill['icon']; ?>"></i>
-                <h3><?php echo $skill['name']; ?></h3>
-                <p><?php echo $skill['description']; ?></p>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
-
-    <!-- Projets -->
-    <section id="projects">
-        <h2 class="section-title">Projets</h2>
-        <div class="projects">
-            <?php foreach ($projects as $project) : ?>
-            <div>
-                <i class="<?php echo $project['icon']; ?>"></i>
-                <h3><?php echo $project['name']; ?></h3>
-                <p><?php echo $project['description']; ?></p>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
-</div>
-
-<footer>
-    <p>&copy; 2024 <?php echo $personalInfo['name']; ?>. Tous droits réservés.</p>
-</footer>
-<script>
-    
-    // Fonction pour ouvrir une modale
-    function openModal(modalId) {
-        document.getElementById(modalId).style.display = "flex";
-    }
-
-    // Fonction pour fermer une modale
-    function closeModal(modal) {
-        modal.style.display = "none";
-    }
-
-    // Bouton pour ouvrir la modale 1
-    document.getElementById("openModalBtn1").onclick = function() {
-        openModal("myModal1");
-    }
-        // Fonction pour fermer une modale
-        function closeModal(modal) {
-        modal.style.display = "none";
-    }
-
-
-
-    
-
-    // Bouton pour ouvrir la modale 2
-    document.getElementById("openModalBtn2").onclick = function() {
-        openModal("myModal2");
-    }
-        // Fonction pour fermer une modale
-    function closeModal(modal) {
-    modal.style.display = "none";
-    }
-
-        // Bouton pour ouvrir la modale 3
-        document.getElementById("openModalBtn3").onclick = function() {
-        openModal("myModal3");
-    }
-
-        // Fonction pour fermer une modale
-        function closeModal(modal) {
-        modal.style.display = "none";
-    }
-
-        // Bouton pour ouvrir la modale 4
-        document.getElementById("openModalBtn4").onclick = function() {
-        openModal("myModal4");
-    }
-        // Fonction pour fermer une modale
-        function closeModal(modal) {
-        modal.style.display = "none";
-    }    
-
-
-
-
-    // Obtenir tous les boutons de fermeture
-    var closeButtons = document.getElementsByClassName("close");
-
-    // Ajouter des événements de clic à chaque bouton de fermeture
-    for (var i = 0; i < closeButtons.length; i++) {
-        closeButtons[i].onclick = function() {
-            closeModal(this.parentElement.parentElement);
-        }
-    }
-
-    // Fermer la modale si l'utilisateur clique en dehors de celle-ci
-    window.onclick = function(event) {
-        var modals = document.getElementsByClassName("modal");
-        for (var i = 0; i < modals.length; i++) {
-            if (event.target == modals[i]) {
-                closeModal(modals[i]);
-            }
-        }
-    }
-</script>
-
-</body>
-</html>
+    </
