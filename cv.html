@@ -30,11 +30,14 @@
             width: 292px;
         }
         .contact-info > div{
-            display: flex;
-        flex-wrap: nowrap;
+             display: flex;
+             flex-direction: row;
+             justify-content: start;
+             align-items: center;
         }
         .contact-info img{
-            height: 36px
+            height: 36px;
+            margin-right: 20px;
         }
         main {
             padding: 20px;
@@ -93,69 +96,73 @@
             color: #666;
         }
 
+        /* Styles pour l'impression */
         @media print {
-        body {
-            /*background-color: white;*/
-            margin: 0;
-            padding: 20px;
-            font-size: 15px; /* Réduire la taille de la police pour ajuster à une page */
-            line-height: 1.2; /* Réduire la hauteur de ligne */
-        
+            body {
+                background-color: #fff;
+                margin: 0;
+                padding: 0;
+            }
+            .cv-container {
+                max-width: 100%;
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+                display: grid;
+                grid-template-columns: 1fr; /* Une seule colonne en mode impression */
+                gap: 0;
+            }
+            aside, main {
+                padding: 0;
+                margin: 0;
+                border: none;
+                width: 100%;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .header h2 {
+                font-size: 1.4em;
+            }
+            .header h3 {
+                font-size: 1.2em;
+            }
+            .contact-info, .section {
+                margin-bottom: 15px;
+                page-break-inside: avoid;
+            }
+            .contact-info img {
+                height: 20px;
+                margin-right: 10px;
+            }
+            .section h2 {
+                font-size: 1.3em;
+                margin-bottom: 10px;
+                padding-bottom: 3px;
+                border-bottom: 1px solid #333;
+            }
+            .section p, .section ul, .section ul li {
+                font-size: 0.95em;
+                margin-bottom: 8px;
+            }
+            .skills div, .skills2 div {
+                padding: 5px;
+                margin: 2px;
+            }
+            .footer {
+                text-align: center;
+                margin-top: 10px;
+                color: #000;
+            }
+            /* Ajustement des marges de la page */
+            @page {
+                margin: 15mm;
+            }
         }
-        .cv-container {
-            box-shadow: none;
-            padding: 5px;
-            margin: 0;
-            max-width: 100%;
-            display: flex;  /*Empiler les sections verticalement */
-        }
-        aside, main {
-            padding: 0;
-            width: auto;
-            border-radius: 0;
-            margin: 0;
-        }
-        aside {
-            margin-bottom: 10px; /* Espacement entre aside et main */
-            
-        }
-        .header h1 {
-            font-size: 1.2em; /* Réduire la taille des titres */
-            margin: 5px 0;
-        }
-        .header h2 {
-            font-size: 1em;
-            margin: 5px 0;
-        }
-        .section h2 {
-            font-size: 1em;
-            margin: 5px 0;
-        }
-        .section p, .section ul li, .contact-info p {
-            font-size: 0.8em;
-            margin: 3px 0;
-        }
-        .skills2 div, .skills div {
-            font-size: 0.7em;
-            padding: 4px 6px;
-            margin: 2px;
-            display:flex;
-            flex-wrap: wrap;
-
-        }
-        .footer {
-            margin-top: 10px;
-            font-size: 0.8em;
-        }
-        img {
-            width: 70px; /* Réduire la taille des images */
-            height: 70px;
-        }
-        @page {
-            size: A4;
-            margin: 15mm; /* Réduire les marges de la page pour maximiser l'espace */
-        }
-    }
     </style>
 </head>
 <body>
@@ -163,16 +170,17 @@
         <aside>
             <div class="header">
                 <h1>Diabaté Cheick</h1>
-                <h2>Concepteur Développeur d'Applications en Formation</h2>
+                <h2>Concepteur Développeur d'Applications </h2>
+                <h3>(En Formation)</h3>
             </div>
             <div class="contact-info">
                 <div>
                     <img src="./assets/logos/marqueur.png" alt="marqueur"> 
-                    <p>8 Allée Auguste Rodin|Seynod, 74600</p>
+                    <p>8 Allée Auguste Rodin <br> Seynod 74600</p>
                 </div>
                 <div>
                     <img src="./assets/logos/email.png" alt="email">
-                    <p>Email : hamtidiane@gmail.com</p>
+                    <p>hamtidiane@gmail.com</p>
                 </div>
                 <div>
                     <img src="./assets/logos/telephone.png" alt="email">
@@ -305,4 +313,4 @@
         </main>
     </div>
 </body>
-</html>
+</html> 
