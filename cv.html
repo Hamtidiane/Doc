@@ -59,6 +59,7 @@
         }
         .section {
             margin-bottom: 20px;
+            
         }
         .section h2 {
             border-bottom: 2px solid #333;
@@ -95,74 +96,88 @@
             margin-top: 20px;
             color: #666;
         }
-
-        /* Styles pour l'impression */
         @media print {
-            body {
-                background-color: #fff;
-                margin: 0;
-                padding: 0;
-            }
-            .cv-container {
-                max-width: 100%;
-                margin: 0;
-                padding: 20px;
-                box-shadow: none;
-                display: grid;
-                grid-template-columns: 1fr; /* Une seule colonne en mode impression */
-                gap: 0;
-            }
-            aside, main {
-                padding: 0;
-                margin: 0;
-                border: none;
-                width: 100%;
-            }
-            .header {
-                text-align: center;
-                margin-bottom: 10px;
-            }
-            .header h1 {
-                font-size: 2em;
-            }
-            .header h2 {
-                font-size: 1.4em;
-            }
-            .header h3 {
-                font-size: 1.2em;
-            }
-            .contact-info, .section {
-                margin-bottom: 15px;
-                page-break-inside: avoid;
-            }
-            .contact-info img {
-                height: 20px;
-                margin-right: 10px;
-            }
-            .section h2 {
-                font-size: 1.3em;
-                margin-bottom: 10px;
-                padding-bottom: 3px;
-                border-bottom: 1px solid #333;
-            }
-            .section p, .section ul, .section ul li {
-                font-size: 0.95em;
-                margin-bottom: 8px;
-            }
-            .skills div, .skills2 div {
-                padding: 5px;
-                margin: 2px;
-            }
-            .footer {
-                text-align: center;
-                margin-top: 10px;
-                color: #000;
-            }
-            /* Ajustement des marges de la page */
-            @page {
-                margin: 15mm;
-            }
-        }
+    body {
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .cv-container {
+        max-width: 100%;
+        margin: 20px auto;
+        background-color: #fff;
+        box-shadow: none;
+        padding: 20px;
+        border-radius: 8px;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 20px;
+    }
+    aside, main {
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .header h1 {
+        font-size: 2.5em;
+        color: #333;
+        margin: 10px 0;
+    }
+    .header p {
+        font-size: 1.2em;
+        color: #461616;
+        margin: 5px 0;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section h2 {
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+        color: #333;
+    }
+    .section p {
+        margin-bottom: 10px;
+    }
+    .section ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .section ul li {
+        margin-bottom: 17px;
+    }
+    .skills, .skills2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .skills div {
+        background-color: #f1f1f1;
+        color: #333;
+        padding: 8px 12px;
+        margin: 4px;
+        border-radius: 4px;
+    }
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #666;
+    }
+    /* Ajustement des marges de la page */
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -184,7 +199,7 @@
                 </div>
                 <div>
                     <img src="./assets/logos/telephone.png" alt="email">
-                    <p>Téléphone : +33 6 14 80 72 90</p>
+                    <p>  06 14 80 72 90</p>
                 </div>    
             </div>
             <div class="section">
@@ -199,7 +214,6 @@
             </div>
             <div class="section">
                 <h2>Langages</h2>
-                <h4>En cours d'acquisition</h4>
                 <div class="skills2">
                     <div>
                         <figure>
@@ -225,7 +239,6 @@
                     <div class="section">
 
                         <h2>Framework</h2>
-                        <h4>En cours d'acquisition</h4>
                         <div class="skills2">
                     <div>
                         <figure>
@@ -254,7 +267,7 @@
         <main>
             <div class="section">
                 <h2>À propos de moi</h2>
-                <p>Je suis Cheick Diabaté, concepteur développeur d’applications a la recherche d'une alternance avec une passion pour la technologie. J'ai un BTS IDA et un DUT Informatique, renforçant mes compétences en développement. J’ai travaillé 5 ans comme facteur à La Poste, acquérant rigueur, gestion du temps et sens des responsabilités, tout en étant agent d’entretien durant un an.</p>
+                <p>Étudiant au Campus Numérique in The Alps , je suis actuellement à la recherche d'une alternance en tant que concepteur développeur d'application. Passionné par le développement web , je possède des compétences en html/css, PHP et en utilisation de framework comme Laravel . Ayant quelques projets académiques réussis, je suis motivé par l'opportunité de mettre en pratique mes connaissances et de contribuer activement à des projets innovants. Mon objectif est d'acquérir une expérience professionnelle significative tout en poursuivant mes études.</p>
             </div>
             
             <div class="section">

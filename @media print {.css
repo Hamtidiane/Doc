@@ -1,0 +1,63 @@
+@media print {
+        body {
+            /*background-color: white;*/
+            margin: 0;
+            padding: 20px;
+            font-size: 15px; /* Réduire la taille de la police pour ajuster à une page */
+            line-height: 1.2; /* Réduire la hauteur de ligne */
+        
+        }
+        .cv-container {
+            box-shadow: none;
+            padding: 5px;
+            margin: 0;
+            max-width: 100%;
+            display: flex;  /*Empiler les sections verticalement */
+        }
+        aside, main {
+            padding: 0;
+            width: auto;
+            border-radius: 0;
+            margin: 0;
+        }
+        aside {
+            margin-bottom: 10px; /* Espacement entre aside et main */
+            
+        }
+        .header h1 {
+            font-size: 1.2em; /* Réduire la taille des titres */
+            margin: 5px 0;
+        }
+        .header h2 {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .section h2 {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .section p, .section ul li, .contact-info p {
+            font-size: 0.8em;
+            margin: 3px 0;
+        }
+        .skills2 div, .skills div {
+            font-size: 0.7em;
+            padding: 4px 6px;
+            margin: 2px;
+            display:flex;
+            flex-wrap: wrap;
+
+        }
+        .footer {
+            margin-top: 10px;
+            font-size: 0.8em;
+        }
+        img {
+            width: 70px; /* Réduire la taille des images */
+            height: 70px;
+        }
+        @page {
+            size: A4;
+            margin: 15mm; /* Réduire les marges de la page pour maximiser l'espace */
+        }
+    }
