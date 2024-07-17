@@ -1205,4 +1205,4 @@ Accéder aux Vues dans le Navigateur
 
 Cela devrait vous permettre de voir et de manipuler les données Cart via les vues dans votre navigateur web.
 
-
+.
