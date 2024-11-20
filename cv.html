@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- Monsieur, quand on demarre un fichier CSS, les premieres lignes a placer sont:
+
+    * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+      }
+
+On ne peut pas fairte du CSS si on ne reset pas tous les margins et paddings( sinon tu vas te trouver avec des ecarts qui tu ne sais pas d'où cela vient )
+
+ J'ai ajouté le dossier icomoon dans les assets. le lien est fait dans le HEAD de ta page HTML. Du coup, sans supprimer ni les images ni leur CSS, ( j'ai mit en commentaire) j'ai placé des classes sur les span pour insérer les icones. La couleur c'est au choix.
+ 
+ ton media print est prêt et peut etre modifier (fais quand meme une sauvgarde si tu ne te sens pas sur de pouvoir revenir à la conif de depart.).
+
+ Si t'as des questions, n'hesite pas...
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modèle de CV</title>
+    <link rel="stylesheet" href="./assets/icomoon/style.css"> <!-- Chemin vers style.css d'IcoMoon -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgb(211, 196, 196);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            /* Colonnes pour aside et main */
+            gap: 20px;
+            /* Espacement entre les colonnes */
+        }
+
+        aside {
+            background-color: rgb(52, 50, 50);
+            padding: 10px;
+            border-radius: 8px;
+            width: 292px;
+            
+        }
+        aside h1, h2, p {
+           color: white;
+        }
+
+        .contact-info>div {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding-bottom: 1rem;
+        }
+
+        .localisation img {
+            height: auto;
+            width: auto;
+            margin-right: 20px;
+        } 
+        .localisation div {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 20px;
+            align-items: center;
+        }
+
+        .contact-info span {
+            display: inline-block;
+            font-size: 2rem;
+            color: red;
+            margin-right: 20px;
+        }
+
+        main {
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.1rem;
+            color:white;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .header h2 {
+            font-size: .84rem;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #461616;
+            ;
+            margin: 5px 0;
+        }
+
+        .section {
+            margin-top: .5rem;
+            margin-bottom: 20px;
+        }
+
+        aside .section h2 {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            /* margin-bottom: 20px; */
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .section p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section ul li {
+            margin-bottom: 17px;
+            color: white;
+        }
+
+        .section ul li p:first-child {
+            font-weight: bold;
+        }
+
+        .section ul li p:last-child {
+            padding-left: 20px;
+        }
+
+        .section ul li p {
+            margin: 0;
+        }
+
+
+        .skills,
+        .skills2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills div,
+        .skills2 div {
+            background-color:rgb(52, 50, 50);
+            color: #333;
+            padding: 8px 12px;
+            margin: 4px;
+            border-radius: 4px;
+            width: 40%;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .tof img{
+            width: 90%;
+            border-radius: 50%;
+            position: relative;
+            left: 15px;
+            
+            
+        }
+        .titleh2{
+        display: flex;
+        justify-content: space-between;
+        }
+        .content{
+        display: flex;
+        justify-content: space-between;
+        }
+
+        /* Styles pour l'impression */
+      
+            @media print {
+    /* Assurez-vous que tout le contenu rentre sur une page A4 */
+    body {
+        margin: 0;
+        padding: 0;
+        background: white; /* Supprime le fond gris */
+    }
+
+    .cv-container {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        padding: 10mm; /* Ajuste les marges pour l'impression */
+        box-shadow: none; /* Supprime les ombres */
+        page-break-inside: avoid; /* Évite les coupures d'une section */
+    }
+
+    aside, main {
+        width: auto; /* Permet un réajustement fluide */
+    }
+
+    .photo img {
+        max-width: 100%; /* Reduit la taille de l'image */
+        display: block;
+        margin: 0 auto;
+    }
+
+    h1, h2, h3, p {
+        font-size: 90%; /* Réduit légèrement les tailles de police */
+    }
+
+    .section ul li {
+        font-size: 0.85em; /* Diminue la taille des listes */
+    }
+
+    img, figure {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Cache les éléments non essentiels */
+   
+
+    /* Ajuste l'espacement des sections */
+    .section {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+    /* Ajuste les marges pour tenir sur une page A4 */
+    @page {
+      
+        size: A4;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+        <aside>
+            <div class="tof">
+                <img src = "./assets/image/Cheick-Hamadou-DIABATE.jpg"
+        
+        </div>
+            </div>
+            <div class="header">
+                <h1>Diabaté Cheick</h1>
+                <h2>Concepteur Développeur d'Applications </h2>
+                <h3>(En Formation)</h3>
+            </div>
+            <div class="localisation">
+                <div>
+                    <img src="./assets/logos/marqueur.png" alt="marqueur"> 
+                   <!--  <span class="icon-location2"></span>-->
+                    <p>8 Allée Auguste Rodin <br> Seynod 74600</p>
+                </div>
+                <div>
+                     <img src="./assets/logos/email.png" alt="email"> 
+                   <!-- <span class="icon-envelope1"></span>-->
+                    <p>hamtidiane@gmail.com</p>
+                </div>
+                <div>
+                    <img src="./assets/logos/telephone.png" alt="email"> 
+                     <!--<span class="icon-mobile3"></span>-->
+                    <p>+33 6 14 80 72 90</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Compétences</h2>
+                <div class="skills2">
+                    <div>
+                        <figure>
+                            <img src="assets/logos/html5.png" alt="html">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="assets/logos/css.png" alt="css">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="assets/logos/javascript.png" alt="css">
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="assets/logos/php.png" alt="css">
+                        </figure>
+                    </div>
+                </div>
+                <div class="section">
+
+                    <div class="skills2">
+                        <div>
+                            <figure>
+                                <img src="assets/logos/vuejs.png" alt="css">
+                            </figure>
+                        </div>
+                        <div>
+                            <figure>
+                                <img src="assets/logos/laravel.png" alt="css">
+                            </figure>
+                        </div>
+                        <div>
+                            <figure>
+                                <img src="assets/logos/symfony.png" alt="css">
+                            </figure>
+                        </div>
+                        <div>
+                            <figure>
+                                <img src="assets/logos/springboot.png" alt="css">
+
+                            </figure>
+                        </div>
+
+                    </div>
+                    <div class="section">
+                        <div class="titleh2">
+                            <h2>Hobbie</h2>
+                            <h2>Langues</h2>
+                        </div>
+                        <div class="content">
+                        <ul>
+                            <li>Randonnée</li>
+                            <li>Football</li>
+                            <li>Cuisine</li>
+                            <li>Jardinnage</li>
+                            <li>Musique</li>
+                        </ul>
+                        <ul>
+                            <li>Français</li>
+                            <li>Anglais B2</li>
+                            <li>Espagnol B1</li>
+                        </ul>
+                    </div>
+                    </div>
+        </aside>
+        <main>
+            <div class="section">
+                <h2>À propos de moi</h2>
+                <p>Étudiant au Campus Numérique in The Alps à ANNECY , je suis actuellement à la recherche d'une alternance en tant que concepteur développeur d'application. Passionné par le développement web. Ayant quelques projets académiques réussis, je suis motivé par l'opportunité de mettre en pratique mes connaissances et de contribuer activement à des projets innovants. Mon objectif est d'acquérir une expérience professionnelle significative tout en poursuivant mes études.</p>
+            </div>
+
+            <div class="section">
+                <h2>Expérience professionnelle</h2>
+                <ul>
+                    <li>
+                        <em>2022 - 2023</em><br>
+                        <strong>Agent de service ASP</strong><br>
+                        <em>LCM-ANNECY</em> - ANNECY<br>
+                        Entretien de locaux techniques
+                    </li>
+                    <li>
+                        <em>2018 - 2023</em><br>
+                        <strong>FACTEUR</strong><br>
+                        <em>LA POSTE</em> - ANNECY<br>
+                        Tri et distribution de courriers et colis
+                    </li>
+                    <li>
+                        <em>2017 - 2018</em><br>
+                        <strong>Assistant responsable technique service après vente</strong><br>
+                        <em>Intel Afrique</em> - ABIDJAN<br>
+                        Assistant du responsable SAV
+                    </li>
+
+                    <li>
+                        <em>2014- 2017</em><br>
+                        <strong>Maintenance informatique et réparation de smartphones</strong><br>
+                        <em>Auto-Entrepreneur</em> - ABIDJAN<br>
+                    </li>
+                    <li>
+                        <em>2013 - 2014</em><br>
+                        <strong>Agent au service informatique</strong><br>
+                        <em> Agence Comptable des Créances Contentieuses</em> - ABIDJAN<br>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Formation</h2>
+                <ul>
+                    <li>
+                        <p>BTS - Informatique Développeur d'Applications</p>
+                        <p>- Institut Professionnel BOOTH, 2012, ABIDJAN</p>
+                    </li>
+
+                    <li>
+                        <p>DUT - Informatique Développeur d'Applications</p>
+                        <p>- Institut ISCC, 2012, ABIDJAN</p>
+                    </li>
+
+                    <li>
+                        <p>Baccalauréat Serie D</p>
+                        <p>-Baccalauréat - Candidat Libre, ABIDJAN</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="portfolio">
+                <p>Portfolio: www.hamtidiane.fr</p>
+                <img src="assets/logos/qrcodesite.png" alt="qrcode">
+            </div>
+            </div>
+           
+
+        </main>
+    </div>
+</body>
+
+</html>
